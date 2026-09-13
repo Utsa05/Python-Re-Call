@@ -58,3 +58,37 @@ class Order:
             item.product.reduce_stock(item.quantity)
 
         self.status = "Completed"
+
+    def get_summary(self) -> str:
+        """Generate a readable order summary."""
+
+        lines = [
+            f"Order ID: {self.order_id}",
+            f"Customer: {self.customer.name}",
+            f"Customer: {self.customer.name}",
+            f"Status: {self.status}",
+            "",
+            "Items:",
+        ]
+
+        for item in self.items:
+            lines.append(f"  - {item}")
+
+        lines.extend(
+            [
+                "",
+                f"Total: ${self.calculate_total():.2f} NZD",
+            ]
+        )
+
+        return "\n".join(lines)
+
+
+    def __str__(self) -> str:
+        """Return a readable order representation."""
+
+        return (
+            f"Order {self.order_id} | "
+            f"{self.customer.name} | "
+            f"{self.status}"
+        )
