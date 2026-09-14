@@ -4,7 +4,7 @@ Application entry point.
 
 from decimal import Decimal
 
-from controller import BankController
+from bank_controller import BankController
 
 
 def main() -> None:
