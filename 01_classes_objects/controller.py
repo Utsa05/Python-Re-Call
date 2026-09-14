@@ -22,12 +22,14 @@ class ECommerceController:
         self,
         name: str,
         email: str,
+        phone_no: str,
         address: str
     ) -> Customer:
 
         self.customer = Customer(
             name=name,
             email=email,
+            phone_no=phone_no,
             address=address
         )
 

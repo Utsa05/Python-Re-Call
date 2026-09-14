@@ -30,10 +30,10 @@ class OrderItem:
         self.quantity = quantity
 
 
-def calculate_subtotal(self) -> Decimal:
-    """Calculate product price × quantity."""
+    def calculate_subtotal(self) -> Decimal:
+        """Calculate product price × quantity."""
 
-    return self.product.price * self.quantity
+        return self.product.price * self.quantity
 
     def __str__(self) -> str:
         """Return a readable order item."""
